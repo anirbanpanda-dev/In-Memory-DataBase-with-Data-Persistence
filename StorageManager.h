@@ -5,7 +5,7 @@
 
 
 class StorageManager{
-    std::time_t GetUniqueIdentifier();
+    long GetUniqueIdentifier();
     public:
     StorageManager();
     void AddData(std::string key, std::string value);

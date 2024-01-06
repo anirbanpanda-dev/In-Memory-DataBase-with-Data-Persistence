@@ -13,7 +13,8 @@ KeyValue* KeyValue::getInstance(){
     return kv;
 }
 
-void KeyValue::AddData(std::string key, std::string value, std::time_t identifier){
+void KeyValue::AddData(std::string key, std::string value, long identifier){
+    
     kvMap[key] = {value, identifier};
 }
 
@@ -22,4 +23,9 @@ std::string KeyValue::GetData(std::string key){
         return "";
     }
     return kvMap[key].first;
+}
+
+void KeyValue::Deletedata(std::string key, long identifier){
+    if(kvMap.find(key)==kvMap.end()) throw ;
+    kvMap.erase(key);
 }
